@@ -19,7 +19,7 @@ const Header = () => {
     <header className='py-2 md:py-4 bg-white shadow-sm'>
       <div className="container">
         {/* Desktop Header */}
-        <div className="hidden lg:flex justify-between items-center">
+        <div className="hidden lg:flex justify-between items-center mb-3">
           <div className="logo">
             <Link href="/">
               <Image src="/shoes-logo-nobg.png" alt="logo" width={243} height={73} />
@@ -37,11 +37,11 @@ const Header = () => {
             
             <div className='flex items-center gap-8'>
               <Link href={"/wishlist"} className='relative flex'>
-                <span className='bg-[#DC2626] w-6 h-6 text-white rounded-full flex items-center justify-center absolute -top-[10px] -right-[17px] z-50 text-xs'>3</span>
+                <span className='bg-[#DC2626] w-6 h-6 text-white rounded-full flex items-center justify-center absolute -top-[10px] -right-[17px] z-50 text-xs'>0</span>
                 <FaRegHeart size={25} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
               <Link href={"/cart"} className='relative flex'>
-                <span className='bg-[#DC2626] w-6 h-6 text-white rounded-full flex items-center justify-center absolute -top-[10px] -right-[17px] z-50 text-xs'>3</span>
+                <span className='bg-[#DC2626] w-6 h-6 text-white rounded-full flex items-center justify-center absolute -top-[10px] -right-[17px] z-50 text-xs'>0</span>
                 <HiOutlineShoppingBag size={30} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
             </div>
@@ -60,11 +60,11 @@ const Header = () => {
             
             <div className='flex items-center gap-4'>
               <Link href={"/wishlist"} className='relative flex'>
-                <span className='bg-[#DC2626] w-5 h-5 text-white rounded-full flex items-center justify-center absolute -top-[8px] -right-[12px] z-50 text-xs'>3</span>
+                <span className='bg-[#DC2626] w-5 h-5 text-white rounded-full flex items-center justify-center absolute -top-[8px] -right-[12px] z-50 text-xs'>0</span>
                 <FaRegHeart size={20} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
               <Link href={"/cart"} className='relative flex'>
-                <span className='bg-[#DC2626] w-5 h-5 text-white rounded-full flex items-center justify-center absolute -top-[8px] -right-[12px] z-50 text-xs'>3</span>
+                <span className='bg-[#DC2626] w-5 h-5 text-white rounded-full flex items-center justify-center absolute -top-[8px] -right-[12px] z-50 text-xs'>0</span>
                 <HiOutlineShoppingBag size={24} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
               <button 

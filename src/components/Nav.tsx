@@ -23,7 +23,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav className='py-4 bg-white'>
+    <nav className='pt-6 pb-4 bg-white'>
       <div className='container flex items-center justify-center'>
         {/* Desktop Navigation */}
         <div className='hidden lg:flex items-center justify-center gap-4 xl:gap-6 2xl:gap-8 whitespace-nowrap'>
@@ -44,7 +44,7 @@ const Nav = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
-          className='lg:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 absolute right-4'
+          className='lg:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 absolute right-4 hover:text-primary transition-colors duration-200'
           aria-label='Toggle mobile menu'
         >
           <span
