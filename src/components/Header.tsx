@@ -93,14 +93,14 @@ const Header = () => {
               <div className='flex flex-col gap-3'>
                 <Link 
                   href={"/login"} 
-                  className='hover:text-primary transition-colors py-2'
+                  className='hover:text-primary transition-colors py-2 text-right'
                   onClick={() => setIsUserMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link 
                   href={"/register"} 
-                  className='hover:text-primary transition-colors py-2'
+                  className='hover:text-primary transition-colors py-2 text-right'
                   onClick={() => setIsUserMenuOpen(false)}
                 >
                   Register
@@ -111,74 +111,76 @@ const Header = () => {
 
           {/* Navigation Menu */}
           {isNavMenuOpen && (
-            <div className="bg-gray-50 rounded-lg p-4 space-y-3 mb-3">
-              <div className='flex flex-col gap-3'>
-                <Link 
-                  href="/" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link 
-                  href="/fruits-vegetables" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Fruits & Vegetables
-                </Link>
-                <Link 
-                  href="/meats-seafood" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Meats & Seafood
-                </Link>
-                <Link 
-                  href="/breakfast" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Breakfast
-                </Link>
-                <Link 
-                  href="/breads-eggs" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Breads & Eggs
-                </Link>
-                <Link 
-                  href="/beverages" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Beverages
-                </Link>
-                <Link 
-                  href="/frozen-food" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Frozen Food
-                </Link>
-                <Link 
-                  href="/biscuits-snacks" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Biscuits & Snacks
-                </Link>
-                <Link 
-                  href="/grocery-staples" 
-                  className='hover:text-primary transition-colors py-2'
-                  onClick={() => setIsNavMenuOpen(false)}
-                >
-                  Grocery & Staples
-                </Link>
-                <span className='hover:text-primary transition-colors py-2 cursor-pointer'>
-                  More
-                </span>
+            <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-50 lg:hidden">
+              <div className='p-4'>
+                <div className='flex flex-col space-y-4'>
+                  <Link 
+                    href="/" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    href="/fruits-vegetables" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Fruits & Vegetables
+                  </Link>
+                  <Link 
+                    href="/meats-seafood" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Meats & Seafood
+                  </Link>
+                  <Link 
+                    href="/breakfast" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Breakfast
+                  </Link>
+                  <Link 
+                    href="/breads-eggs" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Breads & Eggs
+                  </Link>
+                  <Link 
+                    href="/beverages" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Beverages
+                  </Link>
+                  <Link 
+                    href="/frozen-food" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Frozen Food
+                  </Link>
+                  <Link 
+                    href="/biscuits-snacks" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Biscuits & Snacks
+                  </Link>
+                  <Link 
+                    href="/grocery-staples" 
+                    className='hover:text-primary transition-colors py-3 text-right text-lg'
+                    onClick={() => setIsNavMenuOpen(false)}
+                  >
+                    Grocery & Staples
+                  </Link>
+                  <span className='hover:text-primary transition-colors py-3 cursor-pointer text-right text-lg'>
+                    More
+                  </span>
+                </div>
               </div>
             </div>
           )}
