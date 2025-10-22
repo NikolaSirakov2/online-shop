@@ -186,7 +186,7 @@ const Header = () => {
       </div>
       
       {/* Navigation - Hidden on mobile */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block border-t border-gray-200">
         <Nav />
       </div>
     </header>

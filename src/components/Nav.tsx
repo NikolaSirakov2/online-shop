@@ -23,20 +23,20 @@ const Nav = () => {
   ];
 
   return (
-    <nav className='py-4 bg-white shadow-sm'>
-      <div className='container flex items-center justify-between gap-5'>
+    <nav className='py-4 bg-white'>
+      <div className='container flex items-center justify-center'>
         {/* Desktop Navigation */}
-        <div className='hidden lg:flex items-center gap-8'>
+        <div className='hidden lg:flex items-center justify-center gap-4 xl:gap-6 2xl:gap-8 whitespace-nowrap'>
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className='text-[16px] text-gray-800 font-semibold hover:text-primary transition-colors duration-200'
+              className='text-[16px] text-gray-800 font-semibold hover:text-primary transition-colors duration-200 whitespace-nowrap'
             >
               {item.label}
             </Link>
           ))}
-          <span className='text-[16px] text-gray-800 font-semibold hover:text-primary transition-colors duration-200 cursor-pointer'>
+          <span className='text-[16px] text-gray-800 font-semibold hover:text-primary transition-colors duration-200 cursor-pointer whitespace-nowrap'>
             More
           </span>
         </div>
@@ -44,7 +44,7 @@ const Nav = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
-          className='lg:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1'
+          className='lg:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 absolute right-4'
           aria-label='Toggle mobile menu'
         >
           <span
