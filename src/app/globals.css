@@ -56,3 +56,41 @@
   transform: translateY(-10px);
   transition: opacity 300ms, transform 300ms;
 }
+
+/* HomeSlider styles */
+.homeSlider {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.homeSlider .mySwiper {
+  width: 100%;
+  height: auto;
+}
+
+.homeSlider .item {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeSlider .item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Swiper navigation buttons */
+.homeSlider .swiper-button-next,
+.homeSlider .swiper-button-prev {
+  color: #27A9F5;
+}
+
+.homeSlider .swiper-button-next:after,
+.homeSlider .swiper-button-prev:after {
+  font-size: 20px;
+}
