@@ -94,3 +94,36 @@
 .homeSlider .swiper-button-prev:after {
   font-size: 20px;
 }
+
+/* Hide navigation arrows on mobile */
+@media (max-width: 640px) {
+  .homeSlider .swiper-button-next,
+  .homeSlider .swiper-button-prev {
+    display: none;
+  }
+}
+
+/* Swiper pagination dots */
+.homeSlider .swiper-pagination {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.homeSlider .swiper-pagination-bullet {
+  background-color: #d1d5db;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+}
+
+.homeSlider .swiper-pagination-bullet-active {
+  background-color: #27A9F5;
+}
+
+/* Hide pagination on desktop */
+@media (min-width: 641px) {
+  .homeSlider .swiper-pagination {
+    display: none;
+  }
+}

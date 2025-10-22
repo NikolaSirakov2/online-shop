@@ -5,13 +5,28 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import Image from 'next/image';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 const HomeSlider = () => {
   return (
     <div className='homeSlider'>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <Swiper 
+        navigation={true} 
+        pagination={{
+          clickable: true,
+          dynamicBullets: false,
+        }}
+        modules={[Navigation, Pagination]} 
+        className="mySwiper"
+        spaceBetween={16}
+        breakpoints={{
+          640: {
+            spaceBetween: 0,
+          },
+        }}
+      >
         <SwiperSlide>
           <div className='item'>
             <Image src={"/hero_slider/nike-1.png"} alt='Nike Slide 1' width={1344} height={514} className='mx-6 mt-6'/>
