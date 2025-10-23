@@ -4,14 +4,14 @@ import React from 'react';
 const Nav = () => {
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/fruits-vegetables', label: 'Fruits & Vegetables' },
-    { href: '/meats-seafood', label: 'Meats & Seafood' },
-    { href: '/breakfast', label: 'Breakfast' },
-    { href: '/breads-eggs', label: 'Breads & Eggs' },
-    { href: '/beverages', label: 'Beverages' },
-    { href: '/frozen-food', label: 'Frozen Food' },
-    { href: '/biscuits-snacks', label: 'Biscuits & Snacks' },
-    { href: '/grocery-staples', label: 'Grocery & Staples' },
+    { href: '/running', label: 'Running' },
+    { href: '/basketball', label: 'Basketball' },
+    { href: '/football', label: 'Football' },
+    { href: '/tennis', label: 'Tennis' },
+    { href: '/training', label: 'Training' },
+    { href: '/lifestyle', label: 'Lifestyle' },
+    { href: '/kids', label: 'Kids' },
+    { href: '/accessories', label: 'Accessories' },
   ];
 
   return (
