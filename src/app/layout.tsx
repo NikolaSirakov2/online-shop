@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import { CartProvider } from "@/contexts/CartContext";
+import ToastContainer from "../components/ToastContainer";
 export const metadata: Metadata = {
   title: "Online Store",
   description: "Online Store for selling products",
@@ -15,8 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        <Header />
-        {children}
+        <CartProvider>
+          <Header />
+          {children}
+          <ToastContainer />
+        </CartProvider>
       </body>
     </html>
   );

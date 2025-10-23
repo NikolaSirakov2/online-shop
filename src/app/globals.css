@@ -5,6 +5,22 @@
   --color-secondary: #6127F5;
 }
 
+/* Toast animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
 .container {
   width: 96%;
   margin: auto;

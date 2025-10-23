@@ -10,10 +10,12 @@ import { HiOutlineShoppingBag } from 'react-icons/hi2'
 import { HiBars3 } from 'react-icons/hi2'
 import { HiXMark } from 'react-icons/hi2'
 import { HiOutlineUser } from 'react-icons/hi2'
+import { useCart } from '../contexts/CartContext'
 
 const Header = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false)
+  const { cartCount } = useCart()
 
   return (
     <header className='py-2 md:py-4 bg-white shadow-sm'>
@@ -41,7 +43,7 @@ const Header = () => {
                 <FaRegHeart size={25} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
               <Link href={"/cart"} className='relative flex'>
-                <span className='bg-[#DC2626] w-6 h-6 text-white rounded-full flex items-center justify-center absolute -top-[10px] -right-[17px] z-50 text-xs'>0</span>
+                <span className='bg-[#DC2626] w-6 h-6 text-white rounded-full flex items-center justify-center absolute -top-[10px] -right-[17px] z-50 text-xs'>{cartCount}</span>
                 <HiOutlineShoppingBag size={30} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
             </div>
@@ -64,7 +66,7 @@ const Header = () => {
                 <FaRegHeart size={20} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
               <Link href={"/cart"} className='relative flex'>
-                <span className='bg-[#DC2626] w-5 h-5 text-white rounded-full flex items-center justify-center absolute -top-[8px] -right-[12px] z-50 text-xs'>0</span>
+                <span className='bg-[#DC2626] w-5 h-5 text-white rounded-full flex items-center justify-center absolute -top-[8px] -right-[12px] z-50 text-xs'>{cartCount}</span>
                 <HiOutlineShoppingBag size={24} className='text-gray-700 hover:text-primary transition-colors duration-200' />
               </Link>
               <button 
