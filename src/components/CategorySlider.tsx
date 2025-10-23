@@ -19,8 +19,8 @@ const CategorySlider = () => {
   ];
 
   return (
-    <div className='py-4'>
-      <div className='container'>
+    <div className='py-4 mt-6'>
+      <div className='container pt-2 mt-4 pl-4'>
         <Swiper
           slidesPerView={8}
           spaceBetween={20}
@@ -47,7 +47,7 @@ const CategorySlider = () => {
         >
           {categories.map((category, index) => (
             <SwiperSlide key={index}>
-              <div className='bg-white p-3 w-full rounded-md border border-gray-200 shadow-md flex flex-col items-center justify-center cursor-pointer hover:shadow-lg hover:border-gray-300 transition-all duration-200'>
+              <div className='bg-white p-3 w-full rounded-md border border-gray-200 shadow-md flex flex-col mt-4 ml-2 items-center justify-center cursor-pointer hover:shadow-lg hover:border-gray-300 hover:-translate-y-1 hover:scale-105 transition-all duration-200'>
                 <img src={category.image} alt={category.name} className='w-12 h-12 object-contain mb-2' />
                 <span className='text-xs text-gray-700 font-medium text-center'>{category.name}</span>
               </div>
