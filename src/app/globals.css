@@ -7,9 +7,7 @@
 
 .container {
   width: 96%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: auto;
 }
 
 /* Mobile-first responsive design */
@@ -125,5 +123,82 @@
 @media (min-width: 641px) {
   .homeSlider .swiper-pagination {
     display: none;
+  }
+}
+
+/* Swiper navigation button styles */
+.swiper-button-next,
+.swiper-button-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  color: #000 !important;
+  width: 15px !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  @apply !bg-primary;
+}
+
+.swiper-button-next:hover svg,
+.swiper-button-prev:hover svg {
+  color: #fff !important;
+}
+
+/* Material-UI Tabs styles */
+.MuiTabs-list button {
+  font-weight: 600 !important;
+}
+
+.MuiTabs-list .Mui-selected {
+  @apply !text-primary;
+}
+
+.MuiTabs-indicator {
+  background-color: primary !important;
+}
+
+.MuiTabScrollButton-root svg {
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Mobile styles for Swiper navigation buttons */
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .swiper-button-next svg,
+  .swiper-button-prev svg {
+    width: 12px !important;
+  }
+}
+
+/* Mobile styles for Material-UI Tabs */
+@media (max-width: 640px) {
+  .MuiTabs-list button {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+    min-width: auto !important;
+  }
+  
+  .MuiTabs-indicator {
+    height: 2px !important;
+  }
+  
+  .MuiTabScrollButton-root svg {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }
