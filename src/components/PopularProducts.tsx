@@ -2,11 +2,12 @@
 import React from 'react'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import ProductsSlider from './ProductsSlider';
 
 const PopularProducts = () => {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
@@ -26,7 +27,7 @@ const PopularProducts = () => {
       <div className='container'>
         <div className='flex items-center justify-between'>
           <div className='col1 w-[30%]'>
-            <h2 className='text-[20px] text-gray-800 font-[600]'>Popular Products</h2>
+            <h2 className='text-[20px] text-gray-800 font-semibold'>Popular Products</h2>
           </div>
           <div className='col2 w-[70%] flex items-center justify-end'>
             <Tabs
@@ -41,6 +42,10 @@ const PopularProducts = () => {
               ))}
             </Tabs>
           </div>
+        </div>
+
+        <div className='mt-8'>
+          <ProductsSlider />
         </div>
       </div>
     </section>
