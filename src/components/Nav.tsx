@@ -9,9 +9,8 @@ const Nav = () => {
     { href: '/football', label: 'Football' },
     { href: '/tennis', label: 'Tennis' },
     { href: '/training', label: 'Training' },
-    { href: '/lifestyle', label: 'Lifestyle' },
-    { href: '/kids', label: 'Kids' },
-    { href: '/accessories', label: 'Accessories' },
+    { href: '/aqua', label: 'Aqua' },
+    { href: '/volleyball', label: 'Volleyball' },
   ];
 
   return (

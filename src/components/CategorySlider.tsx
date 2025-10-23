@@ -9,14 +9,13 @@ import { Navigation, Autoplay } from 'swiper/modules'
 
 const CategorySlider = () => {
   const categories = [
-    { name: 'Running', image: '/cat1.png', href: '/running' },
-    { name: 'Basketball', image: '/cat2.png', href: '/basketball' },
-    { name: 'Football', image: '/cat3.png', href: '/football' },
-    { name: 'Tennis', image: '/cat4.png', href: '/tennis' },
-    { name: 'Training', image: '/cat5.png', href: '/training' },
-    { name: 'Lifestyle', image: '/cat6.png', href: '/lifestyle' },
-    { name: 'Kids', image: '/cat7.png', href: '/kids' },
-    { name: 'Accessories', image: '/cat8.png', href: '/accessories' },
+    { name: 'Running', image: '/shoes/running-shoes.webp', href: '/running' },
+    { name: 'Basketball', image: '/shoes/basketball-shoes.webp', href: '/basketball' },
+    { name: 'Football', image: '/shoes/football-shoes.webp', href: '/football' },
+    { name: 'Tennis', image: '/shoes/tennis-shoes.webp', href: '/tennis' },
+    { name: 'Training', image: '/shoes/workout-shoes.webp', href: '/training' },
+    { name: 'Aqua', image: '/shoes/aqva-shoes.webp', href: '/aqua' },
+    { name: 'Volleyball', image: '/shoes/voleyball-shoes.webp', href: '/volleyball' },
   ];
 
   return (
@@ -48,7 +47,7 @@ const CategorySlider = () => {
         >
           {categories.map((category, index) => (
             <SwiperSlide key={index}>
-              <div className='bg-white p-3 w-full rounded-md shadow-md flex flex-col items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-200'>
+              <div className='bg-white p-3 w-full rounded-md border border-gray-200 shadow-md flex flex-col items-center justify-center cursor-pointer hover:shadow-lg hover:border-gray-300 transition-all duration-200'>
                 <img src={category.image} alt={category.name} className='w-12 h-12 object-contain mb-2' />
                 <span className='text-xs text-gray-700 font-medium text-center'>{category.name}</span>
               </div>
