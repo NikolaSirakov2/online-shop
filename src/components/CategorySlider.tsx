@@ -20,12 +20,13 @@ const CategorySlider = () => {
 
   return (
     <div className='py-4 mt-6'>
-      <div className='container pt-2 mt-4 pl-4'>
+      <div className='container pt-2 mt-4 pl-4 pr-4'>
         <Swiper
           slidesPerView={8}
           spaceBetween={20}
           modules={[Navigation]}
           className="mySwiper"
+          style={{ paddingRight: '16px' }}
           breakpoints={{
             320: {
               slidesPerView: 3,
