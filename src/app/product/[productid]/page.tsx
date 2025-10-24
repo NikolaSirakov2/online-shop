@@ -28,7 +28,7 @@ const ProductDetails = () => {
             <p className='text-gray-600 mb-8'>The product you're looking for doesn't exist.</p>
             <Link 
               href="/" 
-              className='inline-block bg-teal-500 text-white px-6 py-3 rounded-md hover:bg-teal-600 transition-colors'
+              className='inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors'
             >
               Back to Home
             </Link>
@@ -90,9 +90,9 @@ const ProductDetails = () => {
         {/* Breadcrumb */}
         <nav className='mb-8'>
           <ol className='flex items-center space-x-2 text-sm text-gray-600'>
-            <li><Link href="/" className='hover:text-teal-500'>Home</Link></li>
+            <li><Link href="/" className='hover:text-primary'>Home</Link></li>
             <li>/</li>
-            <li><Link href="/" className='hover:text-teal-500'>Products</Link></li>
+            <li><Link href="/" className='hover:text-primary'>Products</Link></li>
             <li>/</li>
             <li><span className='text-gray-800'>{product.alt}</span></li>
           </ol>
@@ -156,7 +156,7 @@ const ProductDetails = () => {
                     onClick={() => setSelectedSize(size)}
                     className={`px-4 py-2 border rounded-md transition-colors ${
                       selectedSize === size
-                        ? 'border-teal-500 bg-teal-50 text-teal-700'
+                        ? 'border-primary bg-primary/10 text-primary'
                         : 'border-gray-300 hover:border-gray-400'
                     }`}
                   >
@@ -176,7 +176,7 @@ const ProductDetails = () => {
                     onClick={() => setSelectedColor(color)}
                     className={`px-4 py-2 border rounded-md transition-colors ${
                       selectedColor === color
-                        ? 'border-teal-500 bg-teal-50 text-teal-700'
+                        ? 'border-primary bg-primary/10 text-primary'
                         : 'border-gray-300 hover:border-gray-400'
                     }`}
                   >
@@ -211,7 +211,7 @@ const ProductDetails = () => {
               <button
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className='flex-1 bg-teal-500 text-white py-3 px-6 rounded-md hover:bg-teal-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors font-medium'
+                className='flex-1 bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors font-medium'
               >
                 ADD TO CART
               </button>
@@ -233,7 +233,7 @@ const ProductDetails = () => {
               <ul className='space-y-2'>
                 {product.features.map((feature, index) => (
                   <li key={index} className='flex items-center space-x-2'>
-                    <span className='w-2 h-2 bg-teal-500 rounded-full'></span>
+                    <span className='w-2 h-2 bg-primary rounded-full'></span>
                     <span className='text-gray-600'>{feature}</span>
                   </li>
                 ))}

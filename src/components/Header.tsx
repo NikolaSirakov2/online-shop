@@ -40,7 +40,7 @@ const Header = () => {
             </div>
             
             <div className='flex items-center gap-8'>
-              <Link href={"/wishlist"} className='relative flex'>
+              <Link href={"/favourites"} className='relative flex'>
                 {favoritesCount > 0 && (
                   <span className='bg-[#DC2626] w-6 h-6 text-white rounded-full flex items-center justify-center absolute -top-[10px] -right-[17px] z-50 text-xs'>{favoritesCount}</span>
                 )}
@@ -67,7 +67,7 @@ const Header = () => {
             </div>
             
             <div className='flex items-center gap-4'>
-              <Link href={"/wishlist"} className='relative flex'>
+              <Link href={"/favourites"} className='relative flex'>
                 {favoritesCount > 0 && (
                   <span className='bg-[#DC2626] w-5 h-5 text-white rounded-full flex items-center justify-center absolute -top-[8px] -right-[12px] z-50 text-xs'>{favoritesCount}</span>
                 )}

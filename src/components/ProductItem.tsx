@@ -88,7 +88,7 @@ function ProductItem({
         {/* Order Button */}
         <button 
           onClick={handleAddToCart}
-          className='w-full py-2 px-4 border-2 border-teal-400 text-teal-400 bg-white rounded-md hover:bg-teal-400 hover:text-white transition-colors duration-200 font-medium'
+          className='w-full py-2 px-4 border-2 border-primary text-primary bg-white rounded-md hover:bg-primary hover:text-white transition-colors duration-200 font-medium'
         >
           ADD TO CART
         </button>
