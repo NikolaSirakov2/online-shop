@@ -2,11 +2,13 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useCart } from '../../contexts/CartContext'
 import Image from 'next/image'
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart()
+  const router = useRouter()
 
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + (item.currentPrice * item.quantity), 0)
@@ -165,7 +167,10 @@ const CartPage = () => {
                 </div>
               </div>
 
-              <button className='w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors font-medium mb-4'>
+              <button 
+                onClick={() => router.push('/checkout')}
+                className='w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors font-medium mb-4'
+              >
                 Proceed to Checkout
               </button>
               
