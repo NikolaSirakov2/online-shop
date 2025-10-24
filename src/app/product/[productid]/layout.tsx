@@ -1,11 +1,11 @@
 import React from 'react'
 
 export const metadata = {
-  title: "PRODUCTS DETAILS PAGE",
-  description: "PRODUCTS",
+  title: "Product Details - Online Store",
+  description: "View detailed information about our products including features, reviews, and specifications.",
 };
 
-const ProductPageLayout = ({ children }) => {
+const ProductPageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {children}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import { CartProvider } from "@/contexts/CartContext";
+import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import ToastContainer from "../components/ToastContainer";
 export const metadata: Metadata = {
   title: "Online Store",
@@ -18,9 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <CartProvider>
-          <Header />
-          {children}
-          <ToastContainer />
+          <FavoritesProvider>
+            <Header />
+            {children}
+            <ToastContainer />
+          </FavoritesProvider>
         </CartProvider>
       </body>
     </html>
