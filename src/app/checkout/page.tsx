@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import { useCart } from '../../contexts/CartContext'
 import { useRouter } from 'next/navigation'
+import { PhoneInput } from 'react-international-phone'
+import 'react-international-phone/style.css'
 
 interface AddressForm {
   firstName: string
@@ -54,7 +56,11 @@ const CheckoutPage = () => {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address'
     }
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required'
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required'
+    } else if (formData.phone.length < 8) {
+      newErrors.phone = 'Please enter a valid phone number'
+    }
     if (!formData.address.trim()) newErrors.address = 'Address is required'
     if (!formData.city.trim()) newErrors.city = 'City is required'
     if (!formData.state.trim()) newErrors.state = 'State is required'
@@ -104,21 +110,21 @@ const CheckoutPage = () => {
   }
 
   return (
-    <div className="container">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="container px-4 sm:px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-8">
         {/* Address Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">Shipping Address</h2>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+            <div className="mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Shipping Address</h2>
               <p className="text-sm text-gray-600">
                 We currently deliver only to European Union countries.
               </p>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Name Fields */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                     First Name *
@@ -161,7 +167,7 @@ const CheckoutPage = () => {
               </div>
 
               {/* Contact Fields */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address *
@@ -186,15 +192,35 @@ const CheckoutPage = () => {
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number *
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
+                  <PhoneInput
+                    defaultCountry="bg"
                     value={formData.phone}
-                    onChange={handleInputChange}
-                    className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary ${
-                      errors.phone ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    onChange={(phone) => {
+                      setFormData(prev => ({ ...prev, phone }))
+                      // Clear error when user starts typing
+                      if (errors.phone) {
+                        setErrors(prev => ({ ...prev, phone: undefined }))
+                      }
+                    }}
+                    className={`w-full ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    inputStyle={{
+                      width: '100%',
+                      padding: '8px 12px',
+                      border: `1px solid ${errors.phone ? '#ef4444' : '#d1d5db'}`,
+                      borderRadius: '0 6px 6px 0',
+                      borderLeft: 'none',
+                      outline: 'none',
+                      fontSize: '16px'
+                    }}
+                    countrySelectorStyleProps={{
+                      buttonStyle: {
+                        padding: '8px 12px',
+                        border: `1px solid ${errors.phone ? '#ef4444' : '#d1d5db'}`,
+                        borderRadius: '6px 0 0 6px',
+                        borderRight: 'none',
+                        outline: 'none'
+                      }
+                    }}
                     placeholder="Enter your phone number"
                   />
                   {errors.phone && (
@@ -225,7 +251,7 @@ const CheckoutPage = () => {
               </div>
 
               {/* City, State, ZIP */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
                     City *
@@ -335,10 +361,10 @@ const CheckoutPage = () => {
               </div>
 
               {/* Submit Button */}
-              <div className="pt-6">
+              <div className="pt-4 sm:pt-6">
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors font-medium text-lg"
+                  className="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors font-medium text-base sm:text-lg"
                 >
                   Continue to Payment
                 </button>
@@ -348,12 +374,12 @@ const CheckoutPage = () => {
         </div>
 
         {/* Order Summary */}
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sticky top-4">
-            <h3 className="text-xl font-bold text-gray-800 mb-6">Order Summary</h3>
+        <div className="lg:col-span-1 order-first lg:order-last">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 lg:sticky lg:top-4">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4 sm:mb-6">Order Summary</h3>
             
             {/* Cart Items */}
-            <div className="space-y-4 mb-6">
+            <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
               {cartItems.map((item) => (
                 <div key={item.id} className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gray-100 rounded-md shrink-0">
@@ -375,7 +401,7 @@ const CheckoutPage = () => {
             </div>
 
             {/* Price Breakdown */}
-            <div className="space-y-3 border-t border-gray-200 pt-4">
+            <div className="space-y-2 sm:space-y-3 border-t border-gray-200 pt-3 sm:pt-4">
               <div className="flex justify-between">
                 <span className="text-gray-600">Subtotal</span>
                 <span className="font-medium">${calculateTotal().toFixed(2)}</span>
