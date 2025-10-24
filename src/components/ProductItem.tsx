@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 import { useCart } from '../contexts/CartContext'
 
 interface ProductItemProps {
@@ -57,9 +58,11 @@ function ProductItem({
     <div className='productItem shadow-md w-full bg-white rounded-md border-t border-gray-200'>
       <div className='p-4 flex flex-col justify-center items-center'>
         <Link href={href} className='group flex flex-col justify-center items-center mb-3'>
-          <img 
+          <Image 
             src={imageSrc} 
             alt={alt} 
+            width={200}
+            height={200}
             className='transition group-hover:scale-105 mb-3'
           />
         </Link>

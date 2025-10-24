@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useCart } from '../../contexts/CartContext'
 import { useRouter } from 'next/navigation'
 import { PhoneInput } from 'react-international-phone'
+import Image from 'next/image'
 import 'react-international-phone/style.css'
 
 interface AddressForm {
@@ -383,9 +384,11 @@ const CheckoutPage = () => {
               {cartItems.map((item) => (
                 <div key={item.id} className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gray-100 rounded-md shrink-0">
-                    <img
+                    <Image
                       src={item.imageSrc}
                       alt={item.alt}
+                      width={48}
+                      height={48}
                       className="w-full h-full object-cover rounded-md"
                     />
                   </div>

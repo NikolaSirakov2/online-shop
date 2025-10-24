@@ -27,7 +27,7 @@ const FavouritesPage = () => {
     return stars;
   };
 
-  const handleAddToCart = (item: any) => {
+  const handleAddToCart = (item: { id: string; imageSrc: string; alt: string; description: string; rating: number; currentPrice: number; originalPrice?: number }) => {
     addToCart({
       id: item.id,
       imageSrc: item.imageSrc,
@@ -51,7 +51,7 @@ const FavouritesPage = () => {
             </div>
             <h1 className='text-3xl font-bold text-gray-800 mb-4'>No Favorites Yet</h1>
             <p className='text-gray-600 mb-8 max-w-md mx-auto'>
-              You haven't added any items to your favorites yet. Start exploring and add products you love!
+              You haven&apos;t added any items to your favorites yet. Start exploring and add products you love!
             </p>
             <Link 
               href="/" 

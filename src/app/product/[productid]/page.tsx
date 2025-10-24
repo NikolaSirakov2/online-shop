@@ -6,6 +6,7 @@ import { getProductById } from '../../../data/products'
 import { useCart } from '../../../contexts/CartContext'
 import { useFavorites } from '../../../contexts/FavoritesContext'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const ProductDetails = () => {
   const params = useParams()
@@ -25,7 +26,7 @@ const ProductDetails = () => {
         <div className='container'>
           <div className='text-center py-20'>
             <h1 className='text-2xl font-bold text-gray-800 mb-4'>Product Not Found</h1>
-            <p className='text-gray-600 mb-8'>The product you're looking for doesn't exist.</p>
+            <p className='text-gray-600 mb-8'>The product you&apos;re looking for doesn&apos;t exist.</p>
             <Link 
               href="/" 
               className='inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors'
@@ -102,9 +103,11 @@ const ProductDetails = () => {
           {/* Product Image */}
           <div className='space-y-4'>
             <div className='aspect-square bg-gray-100 rounded-lg overflow-hidden'>
-              <img 
+              <Image 
                 src={product.src} 
                 alt={product.alt}
+                width={500}
+                height={500}
                 className='w-full h-full object-cover'
               />
             </div>
